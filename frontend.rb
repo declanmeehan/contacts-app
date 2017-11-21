@@ -42,6 +42,7 @@ elsif answer_crud == "3"
 elsif answer_crud == "4"
   params = {}
   print "enter a the contacts id that you would like to update: "
+  answer_update = gets.chomp
    print "enter contacts first name: "
   params["first_name"] = gets.chomp
   print "enter contacts last_name: "
@@ -50,9 +51,9 @@ elsif answer_crud == "4"
   params["phone_number"] = gets.chomp
   print "enter contacts email"
   params["email"] = gets.chomp
-   print "enter contacts middle_name"
+   print "enter contacts middle_name: "
   params["middle_name"] = gets.chomp
-   print "enter contacts bio"
+   print "enter contacts bio: "
   params["bio"] = gets.chomp
   response = Unirest.patch("http://localhost:3000/v1/contacts/#{answer_update}", parameters: params)
   body = response.body
