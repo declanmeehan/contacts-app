@@ -20,7 +20,9 @@ class Contact < ApplicationRecord
       email: email,
       updated_at: updated_at,  
       full_name: full_name,
-      japan_phone_number: japan_phone_number
+      japan_phone_number: japan_phone_number,
+      middle_name: middle_name,
+      bio: bio
     }
   end
 end

@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class V1::ContactsController < ApplicationController
 
   def index
     contacts = Contact.all
@@ -10,7 +10,9 @@ class ContactsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       phone_number: params[:phone_number],
-      email: params[:email], middle_name: params[:middle_name], bio: params[:bio]
+      email: params[:email],
+      middle_name: params[:middle_name],
+      bio: params[:bio]
     )
   end
 

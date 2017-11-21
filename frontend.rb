@@ -20,14 +20,18 @@ if answer_crud == "1"
   body = response.body
   pp body
 elsif answer_crud == "2"
-  print "enter contacts name: "
-  params["name"] = gets.chomp
-  print "enter contacts price: "
-  params["price"] = gets.chomp
-  print "enter contacts image: "
-  params["image"] = gets.chomp
-  print "enter contacts Description: "
-  params["description"] = gets.chomp
+  print "enter contacts first name: "
+  params["first_name"] = gets.chomp
+  print "enter contacts last_name: "
+  params["last_name"] = gets.chomp
+  print "enter contacts phone_number: "
+  params["phone_number"] = gets.chomp
+  print "enter contacts email"
+  params["email"] = gets.chomp
+   print "enter contacts middle_name"
+  params["middle_name"] = gets.chomp
+   print "enter contacts bio"
+  params["bio"] = gets.chomp
   response = Unirest.post("http://localhost:3000/v1/contacts", parameters: params)
   body = response.body
   p body
@@ -38,15 +42,18 @@ elsif answer_crud == "3"
 elsif answer_crud == "4"
   params = {}
   print "enter a the contacts id that you would like to update: "
-  answer_update = gets.chomp
-  print "enter contacts name: "
-  params["name"] = gets.chomp
-  print "enter contacts price: "
-  params["price"] = gets.chomp
-  print "enter contacts image: "
-  params["image"] = gets.chomp
-  print "enter contacts Description: "
-  params["description"] = gets.chomp
+   print "enter contacts first name: "
+  params["first_name"] = gets.chomp
+  print "enter contacts last_name: "
+  params["last_name"] = gets.chomp
+  print "enter contacts phone_number: "
+  params["phone_number"] = gets.chomp
+  print "enter contacts email"
+  params["email"] = gets.chomp
+   print "enter contacts middle_name"
+  params["middle_name"] = gets.chomp
+   print "enter contacts bio"
+  params["bio"] = gets.chomp
   response = Unirest.patch("http://localhost:3000/v1/contacts/#{answer_update}", parameters: params)
   body = response.body
   pp body
