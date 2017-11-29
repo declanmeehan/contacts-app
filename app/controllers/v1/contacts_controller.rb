@@ -2,6 +2,9 @@ class V1::ContactsController < ApplicationController
 
   def index
     contacts = Contact.all
+    if params[:search]
+     contact = Contact.where("first_name ILIKE ?", "%#{params[:search]}%")
+    end
     render json: contacts.as_json
   end
 
@@ -36,8 +39,11 @@ class V1::ContactsController < ApplicationController
      || contact.middle_name
      contact.bio = params[:bio] \
      || contact.bio 
-     contact.save
+    if contact.save
     render json: contact.as_json
+    else
+    render json: {errors: product.errors.full_messages}, status: :bad_request 
+    end
   end
 
   def destroy
